@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+</body>
+</html>
+<script>
+    //{} ：一个{}就是一个块级作用域
+    //在快级作用域下，var 和function 声明的变量依然是全局的
+    // 在块级作用域下let 和const声明的变量是私有的
+    // {}如果想表示一个对象不可以放在行首
+    {
+        let b=1;
+        var a=0;
+        function getA(){}
+    }
+
+    console.log(a);
+    getA();
+    // console.log(b); //  b is not defined
+    // for(){}, if(){},对象{}
+    // {name:"珠峰",age:10} 看成一个块级作用域
+    // ({name:"珠峰",age:10})
+    eval('({name:"珠峰",age:10})');
+    let obj= {name:"珠峰",age:10};
+
+
+    // if(){} 中的function 只会提前声明不会定义,当条件成立，先给函数赋值 代码再执行
+    if (1){
+        var A=1;
+        function getAA() {}
+    }
+    console.log(A);
+    console.log(getAA());
+
+
+    //for
+    //绑定事件是一个异步的操作 先绑定上函数，当点击的触发的时候再拿出函数执行，这个时候i早已经是for执行完以后的i（=5）
+    // let list = document.getElementById("list").getElementsByTagName("li");
+    // for(var i=0;i<list.length;i++){
+    //     list[i].onclick=function () {
+    //         alert(i)
+    //     }
+    // }
+    // console.log(i);
+
+    // 1. 解决方式，给i增加自定义属性
+    // let list = document.getElementById("list").getElementsByTagName("li");
+    // for(var i=0;i<list.length;i++){
+    //     list[i].index = i;
+    //     list[i].onclick=function () {
+    //         alert(this.index)
+    //     }
+    // }
+    // console.log(i);
+
+    // 2.闭包
+
+    // 3.使用let定义i
+    let list = document.getElementById("list").getElementsByTagName("li");
+    for(let i=0;i<list.length;i++){
+        list[i].index = i;
+        list[i].onclick=function () {
+            alert(this.index)
+        }
+    }
+    console.log(i);// let 在块级作用域中是私有的，所以这里是没有定义的
+</script>

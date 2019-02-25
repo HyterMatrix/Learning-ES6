@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // var function 存在变量提前声明
+    // var 只会提前声明 function 既声明又定义
+    // 全局作用域下 使用 var 和function 声明的变量 会给window增加属性
+    console.log(a); //undefined
+    console.log(getA);
+
+    var a = 1;
+    function getA(){}
+
+    var a = 2;
+    console.log(window.a);
+    console.log('getA' in window);
+</script>
