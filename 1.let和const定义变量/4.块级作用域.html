@@ -70,10 +70,9 @@
     // 3.使用let定义i
     let list = document.getElementById("list").getElementsByTagName("li");
     for(let i=0;i<list.length;i++){
-        list[i].index = i;
         list[i].onclick=function () {
-            alert(this.index)
+            alert(i)
         }
     }
-    console.log(i);// let 在块级作用域中是私有的，所以这里是没有定义的
+    console.log(i);// i is not defined let 在块级作用域中是私有的，所以这里是没有定义的
 </script>
