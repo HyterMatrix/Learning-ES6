@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 如果变量名和属性名一致，可以直接省略写法
+    // let {name:name,age:age}={name:"珠峰",age: 10}
+    // let {name,age}={name:"珠峰",age: 10};
+    // console.log(name,age);
+
+    // 默认值
+    // let {name,age=100}={name:"珠峰"};
+    // let {name,age=100}={name:"珠峰",age:undefined};
+    // console.log(name,age);
+
+
+    // 嵌套
+    let {name,age=100,list:[a1,a2,a3,a4]}={name:"珠峰",age:undefined,list:['JS','NODE','vue','react']};
+    console.log(name,age,a1,a2,a3,a4);
+
+
+
+    // let x1,x2;
+    // [x1,x2] = [1,2];
+
+    // {} 开头是块级作用域不能这样 需要用()括起来
+    // let x1,x2;
+    // {x1,x2} = {x1:1,x2:2};
+
+    let x1,x2;
+    ({x1,x2}= {x1:1,x2:2});
+    console.log(x1,x2);
+
+
+
+
+</script>

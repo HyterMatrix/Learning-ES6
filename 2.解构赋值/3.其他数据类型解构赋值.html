@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    // 使用数组解构赋值的形式，如果右边不是一个数组，默认将其转换为类数组（类似数组的对象,必须有个Length属性）
+    // let [x,y] = '1'; // 不行
+    let [x,y] = '123';
+    console.log(x,y); // 1 2
+
+    // 适用对象的解构赋值模式 ，如果右边不是一个对象，默认个将其转换为一个对象,再进行解构赋值
+    let {a} = 1;
+    // let {__proto__:a} = 1;
+    console.log(a);
+    console.log(Object(1)); // 有个{__proto__: } 属性
+
+
+    let {length:b} = '1234';
+    console.log(Object("1234"));
+    console.log(b);
+
+
+</script>

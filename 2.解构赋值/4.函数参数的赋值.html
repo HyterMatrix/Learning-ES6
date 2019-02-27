@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    function getA([a,b,c,...d]){
+        console.log(a,b,c,d);
+    }
+    getA([1,2,3,4,5]);  // 1 2 3 [4,5]
+
+
+    function getB({name,age}) {
+        console.log(name,age)
+    }
+    getB({name:"珠峰",age:10}); // 珠峰 10
+
+    // 默认值
+    function getC({name="珠峰",age=100}) {
+        console.log(name,age)
+    }
+    getC({name:"珠峰"}); // 珠峰 100
+    getC({}); // 珠峰 100
+
+    // 默认值
+    function getD({name="珠峰",age=100}={}) {
+        console.log(name,age)
+    }
+    getD(); // 珠峰 100
+
+    function getD1({name,age}={name:"珠峰",age:100}) {
+        console.log(name,age);
+    }
+
+    getD();     // 珠峰 100
+    getD1();    // 珠峰 100
+    getD({});   // 珠峰 100
+    getD1({});  // undefined undefined
+</script>
