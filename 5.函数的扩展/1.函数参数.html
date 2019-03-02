@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 参数默认值
+    function fn(x="matrix", y="ES6") {
+        console.log(x,y)
+    }
+    fn(0);
+
+    // 参数使用结构赋值
+    function fn1({name="matrix",age=100}={}) {
+        console.log(name,age)
+    }
+    fn1();
+    function fn1({name,age}={name:"matrix",age:100}) {
+        console.log(name,age)
+    }
+    fn1();
+
+
+    // length 属性,当前形参的个数,如果形参有默认值的情况length就是失真， length 是没有默认值的个数
+    function fn2(x,y) {
+
+    }
+    fn2(1,2);
+    console.log(fn2.length);
+    
+    
+    // 参数默认值的位置：一般参数的默认值放在最后面
+    function fn3(x=10, y=20) {
+        
+    }
+    // fn3(,1) 会报错
+
+    // arguments 类数组
+    function fn4(...arg) {
+        console.log(arguments);
+        console.log(arg);
+    }
+    fn4(1,2,3,4,5);
+
+    // 参数作用域的问题
+    // 函数执行时候先给形参赋值，形参也是私有变量，如果给形参的默认值是 一个变量，先看是不是自己的私有变量，不是自己的在找全局中是否有这个变量，没有就报错
+    // let x=10, y=100;
+    // function fn5(x=x,y=y) {
+    //     console.log(x);
+    //     console.log(y);
+    //     let x="matrix";
+    //     let y="ES6";
+    // }
+    // fn5(1); //Identifier 'x' has already been declared
+
+    let m=10, n=100;
+    function fn5(x=m,y=n) {
+        // 私有作用域：私有变量x,y,m,n
+        console.log(x);
+        console.log(y);
+        let m="matrix";
+        let n="ES6";
+    }
+    fn5(1); // 1 100
+
+    let x=100;
+    function fn6(x, y = x) {
+        // x=1,y=x=1
+        console.log(y);
+    }
+    fn6(1);
+
+</script>
