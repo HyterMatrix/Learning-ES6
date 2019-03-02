@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 数组的空位，数组的某个索引位置没有任何值 undefined不是空位
+    // 判断一个数组的位置是不是空位 in
+    // in 判断数组索引位置上有没有值
+    let arr=[,,,,,]; // 五个空位的数组
+    console.log(arr);
+    console.log(arr.length); // 5
+
+    console.log(1 in arr); // false
+
+    // ES5中的数组对空位的处理不一致，一般直接跳过空位
+    // ES6中将空位处理成undefined
+    let arr1 = [1,2,,,,3];
+    // ES5中的filter
+    arr1.filter(function (item) {
+        console.log(item);
+    });
+
+    // ES6中的find
+    arr1.find(function (item) {
+        console.log(item);
+    });
+
+    // ES6
+    for (let item of arr1){
+        console.log(item);
+    }
+
+    // ES5
+    for (let key in arr1){
+        console.log(key);
+    }
+
+
+    // 面试题 得到一个有7个1的数组
+    console.log(Array(7).fill(1));
+
+</script>
