@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let obj = {
+        _name:"AA",
+        get name(){
+            // 只要通过obj获取name属性就会触发这个函数
+            // 这里可以通过return返回值
+            console.log(1);
+            return this._name;
+        },
+        set name(val){
+            //  只要通过obj给name属性设置值就会触发这个set函数
+            console.log(2);
+            this._name = val;
+        }
+    };
+    console.log(obj.name);
+    obj.name="matrix";
+    console.log(obj.name);
+</script>
