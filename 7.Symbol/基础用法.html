@@ -10,5 +10,54 @@
 </html>
 <script>
     // Symbol 是一个新的数据类型 而且是一个值类型的
+    // 使用Symbol函数执行得到一个Symbol数据类型
+    // Symbol 跟字符串差不多 但是使用Symbol函数得到一个数据每一个是完全不同的
+    // 可以接受一个参数 是对Symbol数据的一个描述
+    // 及时描述一样 但是值也是不一样的
+    // 一般当做对象的属性 任意一个Symbol()得到的值都是不同的
+    let sym1 = Symbol("foo");
+    let sym2 = Symbol();
+    console.log(typeof sym1); // symbol
+    console.log(typeof sym2); // symbol
+
+    console.log(sym1 == sym2); // false
+
+
+    let obj = {
+        sym1:"matrix",
+        [sym1]:"hytermatrix"
+    };
+    console.log(obj);
+
+    obj[sym2] = "hytermatrix";
+    console.log(obj);
+
+    // Symbol 值不可以跟其他的值计算 原因Symbol值不能转一个数字
+    // console.log(Symbol("1") + 1); // error：Cannot convert a Symbol value to a number
+    // Number(Symbol("1")); // Cannot convert a Symbol value to a number
+
+    // Symbol 值不可以转字符串
+    // Symbol(1)+ "1"; // Cannot convert a Symbol value to a string
+
+    //  Symbol 值可以转布尔值
+    console.log(Boolean(Symbol(1)));// true
+
+    // 可以调用toString方法 显示字符串
+    console.log(Symbol("zf").toString()); // Symbol(zf)
+
+
+    // Symbol.for() 找到相同参数的Symbol值； 如果之前有相同参数，找到这个值返回，如果没有就创建一个新的Symbol
+    // Symbol.for() 参数相同，值就相同
+    let zf1 = Symbol("zf");
+    let zf2 = Symbol.for("zf");
+    let zf3 = Symbol.for("zf");
+    console.log(zf1 == zf2); // false
+    console.log(zf3 == zf2); // ture
+
+    // Symbol.keyFor(Symbol值) 找到使用Symbol.for创建值得描述
+    // 如果使用Symbol 创建的是获取不到的
+    console.log(Symbol.keyFor(zf2)); // zf
+    console.log(Symbol.keyFor(sym1)); // undefined
+
 
 </script>
