@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // 对对象默认操作的拦截
+    // new Proxy({目标对象},{拦截方法});
+    let obj = {name:"matrix",age:10}
+    // 让proxy1代理了 obj
+    let proxy1 = new Proxy(obj,{
+        get(target,key,proxy){
+            // target 目标对象
+            // key 属性名
+            // proxy 实例
+            console.log("get拦截");
+            return target[key];
+        }
+    });
+    console.log(proxy1.name);
+    // get 只有是获取操作就会触发get
+</script>

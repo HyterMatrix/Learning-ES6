@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    /**
+    function Fn() {
+        this.x = 10;
+    }
+    Fn.prototype.getX = function(){};
+    let f = new Fn();
+    */
+
+    class A{
+        constructor(props) {
+            //类本身函数
+            // this：当前实例
+            this.x=props; // 增加实例属性
+        }
+
+    }
+    let a = new A(10);
+    console.log(a);
+
+    //  类必须要实例化
+    console.log(typeof A); // "function"
+</script>
