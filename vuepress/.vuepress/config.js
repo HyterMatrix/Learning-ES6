@@ -12,7 +12,10 @@ module.exports = {
                 '',
             ]
         },
-        lastUpdated: 'Last Updated',
+        lastUpdated: '上次更新',
+    },
+    markdown:{
+        lineNumbers: true
     },
     base:'/Learning-ES6/',
 };
