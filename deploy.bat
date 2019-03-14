@@ -4,7 +4,11 @@ chcp 65001
 
 echo 当前目录是：%cd%
 echo 开始编译
+
+# 生成静态文件
 call  npx vuepress build vuepress
+
+# 进入生成的文件夹
 cd ./vuepress/.vuepress/dist
 echo 编译完成
 
