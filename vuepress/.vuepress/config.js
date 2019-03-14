@@ -3,6 +3,7 @@ module.exports = {
     description: 'ES6学习文档',
     themeConfig: {
         nav: [
+            { text: '博客', link: 'https://hyter.me/' },
             { text: '文档', link: '/' },
         ],
         sidebar: {
