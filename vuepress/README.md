@@ -2,7 +2,7 @@
 sidebarDepth: 2
 sidebar: auto
 ---
-# ES6 测试 vuepress
+# ES6 测试 vuepress2
 ::: tip
 This is a tip
 :::
