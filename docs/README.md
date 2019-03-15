@@ -1,11 +1,8 @@
 ---
 sidebarDepth: 2
-sidebar: auto
 ---
-# ES6 测试 vuepress2
-::: tip
-This is a tip
-:::
+# ES6学习
+
 ## let和const定义变量
 
 ```js

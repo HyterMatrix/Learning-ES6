@@ -6,10 +6,10 @@ echo 当前目录是：%cd%
 echo 开始编译
 
 # 生成静态文件
-call  npx vuepress build vuepress
+call  npm run docs:build
 
 # 进入生成的文件夹
-cd ./vuepress/.vuepress/dist
+cd ./docs/.vuepress/dist
 echo 编译完成
 
 echo 初始化仓库 并推送到远程

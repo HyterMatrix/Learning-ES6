@@ -6,6 +6,7 @@
     "webpack-dev-middleware": "^3.6.0"
   },
   "scripts": {
-    "vuepress:build": "npx vuepress build vuepress"
+    "docs:build": "npx vuepress build docs",
+    "docs:dev": "npx vuepress dev docs"
   }
 }

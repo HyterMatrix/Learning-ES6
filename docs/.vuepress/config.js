@@ -1,18 +1,18 @@
 module.exports = {
-    title: 'ES6学习文档',
+    title: 'ES6学习文档1',
     description: 'ES6学习文档',
     themeConfig: {
         nav: [
             { text: '博客', link: 'https://hyter.me/' },
             { text: '文档', link: '/' },
         ],
-        sidebar: {
-            title: this.title,
+        sidebar: [{
+            title: '文档',
             collapsable: false,
             children: [
                 '',
             ]
-        },
+        }],
         lastUpdated: '上次更新',
     },
     markdown:{
