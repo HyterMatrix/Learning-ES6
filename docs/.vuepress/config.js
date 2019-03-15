@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'ES6学习文档1',
+    title: 'ES6学习文档',
     description: 'ES6学习文档',
     themeConfig: {
         nav: [
@@ -11,6 +11,8 @@ module.exports = {
             collapsable: false,
             children: [
                 '',
+                'let',
+                'destructuring',
             ]
         }],
         lastUpdated: '上次更新',

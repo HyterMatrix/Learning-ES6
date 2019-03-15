@@ -1,16 +1,8 @@
 ---
 sidebarDepth: 2
 ---
-# ES6学习
+# 介绍
 
-## let和const定义变量
+## 前言
 
-```js
-export default {
-    data(){
-        return {
-            msg: 'Highlighted!'
-        }
-    }
-}
-```
+## 背景
