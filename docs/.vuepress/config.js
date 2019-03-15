@@ -16,6 +16,7 @@ module.exports = {
             ]
         }],
         lastUpdated: '上次更新',
+        sidebarDepth: 2,
     },
     markdown:{
         lineNumbers: true
